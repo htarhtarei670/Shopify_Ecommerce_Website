@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.group {
+    background-color: #fee2e2;
+    margin: 0 100px;
+}
+
+.loginBack {
+    width: 100%;
+    height: 400px;
+}
+
+.form-control {
+    background-color: #eff6ff;
+    border: 1px solid #eff6ff;
+    margin-top: 5px;
+}
+
+.input-box {
+    margin-top: 25px;
+    position: relative;
+}
+
+.input-box label {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    transform: rotateY('-50%');
+    color: #6b7280;
+    transition: .5s;
+    margin: 0 10px;
+}
+
+.input-box input {
+    padding: 12px 15px;
+    width: 400px;
+    background-color: transparent;
+    border: 1px solid black;
+    outline: none;
+    color: #64748b;
+    border-radius: 5px;
+}
+
+.input-box label::before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-left: 1px solid red;
+    border-bottom: 1px solid red;
+    transform: rotate(45deg);
+    background-color: #fee2e2;
+    opacity: 0;
+    transition: .5s;
+    outline: none;
+}
+
+.input-box label::after {
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-right: 1px solid red;
+    border-top: 1px solid red;
+    transform: rotate(45deg);
+    background-color: #fee2e2;
+    opacity: 0;
+    transition: .5s;
+    outline: none;
+}
+
+.input-box input:focus~label i,
+.input-box input:valid~label i {
+    opacity: 0;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -10px;
+    background-color: #fee2e2;
+    color: red;
+    font-size: 13px;
+}
+
+.input-box input:focus~label::after,
+.input-box input:valid~label::after,
+.input-box input:focus~label::before,
+.input-box input:valid~label::before {
+    top: 17%;
+    opacity: 1;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border: 1px solid red;
+}
+
+
+/* end input box for login and sign up */
+
+
+/* start side bar */
+
+.main {
+    display: flex;
+    background-color: #fee2e2;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.sider-bar {
+    width: 300px;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    cursor: pointer;
+    position: sticky;
+    top: 0px;
+    right: 0px;
+}
+
+.logo {
+    color: red;
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.menu-bar {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.menu-bar ul {
+    list-style: none;
+    font-size: 18px;
+    color: #555860;
+}
+
+.menu-bar ul li {
+    padding-bottom: 40px;
+}
+
+.menu-bar ul li i {
+    padding-right: 20px;
+}
+
+.menu-bar ul li span {
+    white-space: nowrap;
+}
+
+.log-out {
+    margin-bottom: 30px;
+    border-top: 1px solid rgb(197, 191, 191);
+    padding-top: 30px;
+}
+
+.log-out a {
+    list-style: none;
+    font-size: 20px;
+    color: #555860;
+    text-decoration: none;
+}
+
+.list-link {
+    text-decoration: none;
+    color: #555860;
+}
+
+
+/* end side bar */
+
+
+/* start nav bar */
+
+.main-content {
+    width: 1040px;
+    padding-bottom: 10px;
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    padding: 20px 30px;
+    width: 100%;
+    position: relative;
+}
+
+.panel {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.account-menu {
+    position: absolute;
+    top: 100%;
+    right: 2%;
+    width: 350px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sub-account-menu {
+    background-color: #f8fafc;
+    padding: 20px 30px;
+    margin: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.account-menu.open-menu {
+    max-height: 400px;
+}
+
+.sub-account-menu ul {
+    list-style: none;
+}
+
+.sub-account-menu li:hover {
+    font-weight: 600;
+}
+
+
+/* end nav bar */
+
+
+/*start category */
+
+.top {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-header {
+    font-size: 30px;
+    font-weight: 600;
+    color: #555860;
+    padding-left: 18px;
+}
+
+.add-btn {
+    background-color: #555860;
+    border: 1px solid #6b7280;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 30px;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+.table-list {
+    margin: 80px 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    padding: 20px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    color: #5c5f66;
+    font-size: 15px;
+}
+
+td {
+    text-align: left;
+    border: none;
+    padding: 20px;
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+tr {
+    border: 1px solid transparent;
+}
+
+.action i {
+    padding: 6px;
+    background-color: #6b7280;
+    color: #eff6ff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.add-box {
+    background-color: #eff6ff;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding-bottom: 40px;
+}
+
+.form-control {
+    border: 1px solid #cbd5e1;
+}
+
+.input {
+    background-color: transparent;
+    border: 1px solid #64748b;
+    border-radius: 5px;
+    width: 320px;
+    padding: 10px;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #64748b;
+}
+
+.product-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #555860;
+}
+
+.detail-box-container {
+    backdrop-filter: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.detail-box {
+    padding: 30px 0px;
+}
+
+.product-featured {
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-color: green;
+    font-size: 20px;
+}
+
+.form-group {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: 5px;
+    height: 100%;
+}
